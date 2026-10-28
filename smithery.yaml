@@ -1,0 +1,21 @@
+# Smithery configuration (container runtime).
+# Format per Smithery's smithery.yaml reference (container runtime), checked 2026-10-28:
+#   https://smithery.ai/docs/build/project-config/smithery-yaml
+#   (page now removed from the live docs; archived copy:
+#    http://web.archive.org/web/20251105164721/https://smithery.ai/docs/build/project-config/smithery-yaml)
+# Smithery's current docs publish servers by URL (Streamable HTTP) or as an MCPB bundle:
+#   https://smithery.ai/docs/build/publish
+# Smithery builds the Dockerfile and talks to the server over Streamable HTTP at /mcp
+# on $PORT, so the container is switched to HTTP transport via `env` below.
+runtime: "container"
+build:
+  dockerfile: "Dockerfile"
+  dockerBuildPath: "."
+startCommand:
+  type: "http"
+  configSchema:
+    type: "object"
+    properties: {}
+  exampleConfig: {}
+env:
+  MCP_TRANSPORT: "streamable-http"

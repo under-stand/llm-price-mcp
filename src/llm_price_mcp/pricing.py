@@ -68,7 +68,7 @@ class PriceCatalog:
         self._fetched_at: float = 0.0
 
     def _fetch(self) -> list[ModelPrice]:
-        resp = httpx.get(self.url, timeout=self.timeout, headers={"User-Agent": "llm-price-mcp/0.1"})
+        resp = httpx.get(self.url, timeout=self.timeout, headers={"User-Agent": "llm-price-mcp/0.2"})
         resp.raise_for_status()
         data = resp.json().get("data", [])
         models = [m for m in (parse_model(r) for r in data) if m is not None]
