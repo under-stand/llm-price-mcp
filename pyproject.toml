@@ -16,6 +16,10 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 
+[project.urls]
+Homepage = "https://github.com/jiegang-li/llm-price-mcp"
+Issues = "https://github.com/jiegang-li/llm-price-mcp/issues"
+
 [project.optional-dependencies]
 dev = ["pytest>=8", "respx>=0.21"]
 

@@ -24,11 +24,13 @@ Data comes from OpenRouter's public models endpoint (no API key required), cache
 需要 Python ≥ 3.10。推荐使用 [uv](https://docs.astral.sh/uv/)：
 
 ```bash
-git clone https://github.com/<your-name>/llm-price-mcp.git
+git clone https://github.com/jiegang-li/llm-price-mcp.git
 cd llm-price-mcp
 uv venv && uv pip install -e .
-# 或：pip install -e .
+# 或：python -m venv .venv && .venv/bin/pip install -e .
 ```
+
+> 仓库地址默认是 `jiegang-li/llm-price-mcp`；如果你 fork 或改了 GitHub 用户名，替换成自己的即可。
 
 本地试运行（stdio 传输）：
 
@@ -74,7 +76,7 @@ npx @modelcontextprotocol/inspector .venv/bin/llm-price-mcp
 
 ```bash
 uv pip install -e '.[dev]'
-pytest -q          # 网络请求均已 mock，离线可跑
+.venv/bin/pytest -q          # 网络请求均已 mock，离线可跑
 ```
 
 ---
@@ -96,10 +98,10 @@ Models with variable pricing (e.g. the `openrouter/auto` router) are skipped. Fr
 Python ≥ 3.10. With [uv](https://docs.astral.sh/uv/):
 
 ```bash
-git clone https://github.com/<your-name>/llm-price-mcp.git
+git clone https://github.com/jiegang-li/llm-price-mcp.git
 cd llm-price-mcp
 uv venv && uv pip install -e .
-# or: pip install -e .
+# or: python -m venv .venv && .venv/bin/pip install -e .
 ```
 
 Run locally (stdio): `.venv/bin/llm-price-mcp`, or debug with
@@ -135,7 +137,7 @@ Run locally (stdio): `.venv/bin/llm-price-mcp`, or debug with
 
 ```bash
 uv pip install -e '.[dev]'
-pytest -q   # all network calls are mocked
+.venv/bin/pytest -q   # all network calls are mocked
 ```
 
 ### Disclaimer
