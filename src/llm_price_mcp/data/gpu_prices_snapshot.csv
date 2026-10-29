@@ -1,97 +1,97 @@
 provider,gpu,variant,price_per_hour,currency,note,source,fetch_date
-RunPod,B300,Community Cloud,6.94,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,B300,Secure Cloud,8.99,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,H200,Community Cloud,3.59,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,H200,Secure Cloud,5.29,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,B200,Community Cloud,5.98,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,B200,Secure Cloud,7.99,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,RTX Pro 6000,Community Cloud,1.69,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,RTX Pro 6000,Secure Cloud,2.49,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,H100 NVL,Community Cloud,2.59,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,H100 NVL,Secure Cloud,3.19,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,H100 PCIe,Community Cloud,1.99,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,H100 PCIe,Secure Cloud,2.89,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,H100 SXM,Community Cloud,2.69,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,H100 SXM,Secure Cloud,3.99,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,A100 PCIe,Community Cloud,1.19,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,A100 PCIe,Secure Cloud,1.79,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,A100 SXM,Community Cloud,1.39,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,A100 SXM,Secure Cloud,1.79,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,L40S,Community Cloud,0.79,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,L40S,Secure Cloud,1.09,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,RTX 6000 Ada,Community Cloud,0.74,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,RTX 6000 Ada,Secure Cloud,0.99,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,A40,Community Cloud,0.35,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,A40,Secure Cloud,0.59,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,L40,Community Cloud,0.69,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,L40,Secure Cloud,0.82,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,RTX A6000,Community Cloud,0.33,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,RTX A6000,Secure Cloud,0.59,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,RTX 5090,Community Cloud,0.69,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,RTX 5090,Secure Cloud,1.19,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,L4,Community Cloud,0.44,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,L4,Secure Cloud,0.59,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,RTX 3090,Community Cloud,0.22,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,RTX 3090,Secure Cloud,0.5,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,RTX 4090,Community Cloud,0.34,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,RTX 4090,Secure Cloud,0.89,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,RTX A5000,Community Cloud,0.16,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,RTX A5000,Secure Cloud,0.27,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,Pro 6000 MIG 48GB,Community Cloud,1.0,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,Pro 6000 MIG 48GB,Secure Cloud,1.29,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,Pro 6000 MIG 24GB,Community Cloud,0.5,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-RunPod,Pro 6000 MIG 24GB,Secure Cloud,0.69,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-28
-Lambda,HGX B200,1-Click Cluster（16 卡）,9.86,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,HGX B200,1-Click Cluster（64 卡）,9.36,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,HGX B200,1-Click Cluster（256+ 卡）,8.87,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,H100,1-Click Cluster（16 卡）,6.16,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,H100,1-Click Cluster（64 卡）,5.85,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,H100,1-Click Cluster（256 卡）,5.54,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,B200 SXM6,8x 实例,6.69,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,H100 SXM,8x 实例,3.99,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,A100 SXM,8x 实例,2.79,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,A100 SXM,8x 实例,1.99,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,Tesla V100,8x 实例,0.79,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,B200 SXM6,4x 实例,6.79,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,H100 SXM,4x 实例,4.09,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,A100 PCIe,4x 实例,1.99,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,A6000,4x 实例,1.09,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,B200 SXM6,2x 实例,6.89,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,H100 SXM,2x 实例,4.19,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,A100 PCIe,2x 实例,1.99,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,A6000,2x 实例,1.09,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,B200 SXM6,1x 实例,6.99,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,GH200,1x 实例,2.29,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,H100 SXM,1x 实例,4.29,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,H100 PCIe,1x 实例,3.29,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,A100 SXM,1x 实例,1.99,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,A100 PCIe,1x 实例,1.99,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,A10,1x 实例,1.29,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,A6000,1x 实例,1.09,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Lambda,Quadro RTX 6000,1x 实例,0.69,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-28
-Vast.ai,H100 SXM,最低价（7 个报价）,1.9342,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,H100 SXM,中位数（7 个报价）,3.3074,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,H100 PCIE,最低价（1 个报价）,3.24,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,H100 PCIE,中位数（1 个报价）,3.24,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,H100 NVL,最低价（4 个报价）,2.4015,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,H100 NVL,中位数（4 个报价）,2.8469,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,H200,最低价（1 个报价）,4.3603,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,H200,中位数（1 个报价）,4.3603,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,B200,最低价（2 个报价）,7.5021,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,B200,中位数（2 个报价）,10.0062,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,RTX 4090,最低价（64 个报价）,0.3356,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,RTX 4090,中位数（64 个报价）,0.4885,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,RTX 5090,最低价（64 个报价）,0.4422,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,RTX 5090,中位数（64 个报价）,0.6785,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,A100 SXM4,最低价（15 个报价）,0.4074,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,A100 SXM4,中位数（15 个报价）,0.8689,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,A100 PCIE,最低价（9 个报价）,0.4009,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-Vast.ai,A100 PCIE,中位数（9 个报价）,0.7393,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-28
-AutoDL,H800 80GB,首页标价,9.98,CNY,会员95折前,https://www.autodl.com/home,2026-10-28
-AutoDL,H20 96GB,首页标价,9.98,CNY,会员95折前,https://www.autodl.com/home,2026-10-28
-AutoDL,PRO 6000 96GB,首页标价,6.98,CNY,会员95折前,https://www.autodl.com/home,2026-10-28
-AutoDL,A800 80GB,首页标价,5.59,CNY,会员95折前,https://www.autodl.com/home,2026-10-28
-AutoDL,RTX 5090 32GB,首页标价,2.78,CNY,会员95折前,https://www.autodl.com/home,2026-10-28
-AutoDL,RTX 4090 24GB,首页标价,1.88,CNY,会员95折前,https://www.autodl.com/home,2026-10-28
-AutoDL,RTX 3090 24GB,首页标价,1.32,CNY,会员95折前,https://www.autodl.com/home,2026-10-28
-FX,USD/CNY,open.er-api.com,6.681042,CNY,汇率,https://open.er-api.com/v6/latest/USD,2026-10-28
+RunPod,B300,Community Cloud,6.94,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,B300,Secure Cloud,8.99,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,H200,Community Cloud,3.59,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,H200,Secure Cloud,5.29,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,B200,Community Cloud,5.98,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,B200,Secure Cloud,7.99,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,RTX Pro 6000,Community Cloud,1.69,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,RTX Pro 6000,Secure Cloud,2.49,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,H100 NVL,Community Cloud,2.59,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,H100 NVL,Secure Cloud,3.19,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,H100 PCIe,Community Cloud,1.99,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,H100 PCIe,Secure Cloud,2.89,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,H100 SXM,Community Cloud,2.69,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,H100 SXM,Secure Cloud,3.99,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,A100 PCIe,Community Cloud,1.19,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,A100 PCIe,Secure Cloud,1.79,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,A100 SXM,Community Cloud,1.39,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,A100 SXM,Secure Cloud,1.79,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,L40S,Community Cloud,0.79,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,L40S,Secure Cloud,1.09,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,RTX 6000 Ada,Community Cloud,0.74,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,RTX 6000 Ada,Secure Cloud,0.99,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,A40,Community Cloud,0.35,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,A40,Secure Cloud,0.59,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,L40,Community Cloud,0.69,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,L40,Secure Cloud,0.82,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,RTX A6000,Community Cloud,0.33,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,RTX A6000,Secure Cloud,0.59,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,RTX 5090,Community Cloud,0.69,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,RTX 5090,Secure Cloud,1.19,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,L4,Community Cloud,0.44,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,L4,Secure Cloud,0.59,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,RTX 3090,Community Cloud,0.22,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,RTX 3090,Secure Cloud,0.5,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,RTX 4090,Community Cloud,0.34,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,RTX 4090,Secure Cloud,0.89,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,RTX A5000,Community Cloud,0.16,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,RTX A5000,Secure Cloud,0.27,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,Pro 6000 MIG 48GB,Community Cloud,1.0,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,Pro 6000 MIG 48GB,Secure Cloud,1.29,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,Pro 6000 MIG 24GB,Community Cloud,0.5,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+RunPod,Pro 6000 MIG 24GB,Secure Cloud,0.69,USD,Pod 按需/卡时,https://www.runpod.io/pricing,2026-10-29
+Lambda,HGX B200,1-Click Cluster（16 卡）,9.86,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,HGX B200,1-Click Cluster（64 卡）,9.36,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,HGX B200,1-Click Cluster（256+ 卡）,8.87,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,H100,1-Click Cluster（16 卡）,6.16,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,H100,1-Click Cluster（64 卡）,5.85,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,H100,1-Click Cluster（256 卡）,5.54,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,B200 SXM6,8x 实例,6.69,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,H100 SXM,8x 实例,3.99,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,A100 SXM,8x 实例,2.79,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,A100 SXM,8x 实例,1.99,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,Tesla V100,8x 实例,0.79,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,B200 SXM6,4x 实例,6.79,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,H100 SXM,4x 实例,4.09,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,A100 PCIe,4x 实例,1.99,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,A6000,4x 实例,1.09,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,B200 SXM6,2x 实例,6.89,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,H100 SXM,2x 实例,4.19,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,A100 PCIe,2x 实例,1.99,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,A6000,2x 实例,1.09,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,B200 SXM6,1x 实例,6.99,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,GH200,1x 实例,2.29,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,H100 SXM,1x 实例,4.29,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,H100 PCIe,1x 实例,3.29,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,A100 SXM,1x 实例,1.99,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,A100 PCIe,1x 实例,1.99,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,A10,1x 实例,1.29,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,A6000,1x 实例,1.09,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Lambda,Quadro RTX 6000,1x 实例,0.69,USD,按需/卡时，不含税,https://lambda.ai/pricing,2026-10-29
+Vast.ai,H100 SXM,最低价（8 个报价）,1.9342,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,H100 SXM,中位数（8 个报价）,2.743,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,H100 PCIE,最低价（4 个报价）,2.2689,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,H100 PCIE,中位数（4 个报价）,2.6926,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,H100 NVL,最低价（4 个报价）,2.6156,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,H100 NVL,中位数（4 个报价）,2.9202,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,H200,最低价（1 个报价）,4.1524,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,H200,中位数（1 个报价）,4.1524,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,B200,最低价（3 个报价）,6.2521,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,B200,中位数（3 个报价）,7.5021,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,RTX 4090,最低价（64 个报价）,0.3422,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,RTX 4090,中位数（64 个报价）,0.4693,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,RTX 5090,最低价（64 个报价）,0.4111,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,RTX 5090,中位数（64 个报价）,0.6867,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,A100 SXM4,最低价（23 个报价）,0.4022,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,A100 SXM4,中位数（23 个报价）,0.8022,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,A100 PCIE,最低价（12 个报价）,0.4009,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+Vast.ai,A100 PCIE,中位数（12 个报价）,0.8081,USD,市场单卡按需；API 单次最多返回 64 条,https://console.vast.ai/api/v0/bundles/,2026-10-29
+AutoDL,H800 80GB,首页标价,9.98,CNY,会员95折前；手工录入值，最后浏览器核对 2026-10-28，本期未复核,https://www.autodl.com/home,2026-10-28
+AutoDL,H20 96GB,首页标价,9.98,CNY,会员95折前；手工录入值，最后浏览器核对 2026-10-28，本期未复核,https://www.autodl.com/home,2026-10-28
+AutoDL,PRO 6000 96GB,首页标价,6.98,CNY,会员95折前；手工录入值，最后浏览器核对 2026-10-28，本期未复核,https://www.autodl.com/home,2026-10-28
+AutoDL,A800 80GB,首页标价,5.59,CNY,会员95折前；手工录入值，最后浏览器核对 2026-10-28，本期未复核,https://www.autodl.com/home,2026-10-28
+AutoDL,RTX 5090 32GB,首页标价,2.78,CNY,会员95折前；手工录入值，最后浏览器核对 2026-10-28，本期未复核,https://www.autodl.com/home,2026-10-28
+AutoDL,RTX 4090 24GB,首页标价,1.88,CNY,会员95折前；手工录入值，最后浏览器核对 2026-10-28，本期未复核,https://www.autodl.com/home,2026-10-28
+AutoDL,RTX 3090 24GB,首页标价,1.32,CNY,会员95折前；手工录入值，最后浏览器核对 2026-10-28，本期未复核,https://www.autodl.com/home,2026-10-28
+FX,USD/CNY,open.er-api.com,6.680538,CNY,汇率,https://open.er-api.com/v6/latest/USD,2026-10-29

@@ -4,6 +4,13 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses
 [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Changed
+- Bundled GPU snapshot refreshed to the 2026-10-29 price-tracker run (96 rows: RunPod, Lambda,
+  Vast.ai, AutoDL; USD/CNY 6.680538). AutoDL rows are manual values last checked 2026-10-28 and keep
+  that date. Model prices are still fetched live from OpenRouter, so no model snapshot is bundled.
+
 ## [0.2.0] - 2026-10-28
 
 ### Added
