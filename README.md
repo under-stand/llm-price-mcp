@@ -1,6 +1,6 @@
 # llm-price-mcp
 
-[![CI](https://github.com/jiegang-li/llm-price-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/jiegang-li/llm-price-mcp/actions/workflows/ci.yml)
+[![CI](https://github.com/under-stand/llm-price-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/under-stand/llm-price-mcp/actions/workflows/ci.yml)
 
 > 让 AI Agent 查询、比较大模型 API 价格、GPU 租赁价格和自建推理成本的 MCP Server · An MCP server that lets AI agents compare LLM API prices, GPU rental prices and self-hosting cost.
 
@@ -48,7 +48,7 @@ CSV 列：`provider,gpu,variant,price_per_hour,currency,note,source,fetch_date`�
 需要 Python ≥ 3.10。推荐使用 [uv](https://docs.astral.sh/uv/)：
 
 ```bash
-git clone https://github.com/jiegang-li/llm-price-mcp.git
+git clone https://github.com/under-stand/llm-price-mcp.git
 cd llm-price-mcp
 uv venv && uv pip install -e .
 # 或：python -m venv .venv && .venv/bin/pip install -e .
@@ -158,7 +158,7 @@ Use the deployment's aggregate throughput under real concurrency and the hourly 
 Python ≥ 3.10. With [uv](https://docs.astral.sh/uv/):
 
 ```bash
-git clone https://github.com/jiegang-li/llm-price-mcp.git
+git clone https://github.com/under-stand/llm-price-mcp.git
 cd llm-price-mcp
 uv venv && uv pip install -e .
 # or: python -m venv .venv && .venv/bin/pip install -e .
