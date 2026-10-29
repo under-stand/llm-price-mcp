@@ -54,7 +54,7 @@ uv venv && uv pip install -e .
 # 或：python -m venv .venv && .venv/bin/pip install -e .
 ```
 
-> 仓库地址默认是 `jiegang-li/llm-price-mcp`；如果你 fork 或改了 GitHub 用户名，替换成自己的即可。
+> 仓库地址默认是 `under-stand/llm-price-mcp`；如果你 fork 或改了 GitHub 用户名，替换成自己的即可。
 
 本地试运行（stdio 传输）：
 
