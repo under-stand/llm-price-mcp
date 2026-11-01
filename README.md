@@ -5,9 +5,9 @@
 > 让 AI Agent 查询、比较大模型 API 价格、GPU 租赁价格和自建推理成本的 MCP Server · An MCP server that lets AI agents compare LLM API prices, GPU rental prices and self-hosting cost.
 
 - 模型 API 价格来自 [OpenRouter 公开模型接口](https://openrouter.ai/api/v1/models)（无需 API Key），内存缓存 1 小时。
-- GPU 租赁价格来自 price-tracker 生成的 `gpu_prices.csv`（RunPod / Lambda / Vast.ai / AutoDL 等），每行带来源 URL 与抓取日期；没有本地数据时使用包内自带的快照（2026-10-29；其中 AutoDL 为手工值，日期 2026-10-28），并在输出中注明。
+- GPU 租赁价格来自 price-tracker 生成的 `gpu_prices.csv`（RunPod / Lambda / Vast.ai / AutoDL 等），每行带来源 URL 与抓取日期；没有本地数据时使用包内自带的快照（2026-11-01；其中 AutoDL 为手工值，日期 2026-10-28），并在输出中注明。
 - LLM prices come from OpenRouter's public models endpoint (no API key), cached for 1 hour.
-- GPU rental prices come from a price-tracker `gpu_prices.csv` (RunPod / Lambda / Vast.ai / AutoDL …), each row with its source URL and fetch date; without local data a bundled, clearly dated snapshot (2026-10-29; AutoDL rows are manual values dated 2026-10-28) is used.
+- GPU rental prices come from a price-tracker `gpu_prices.csv` (RunPod / Lambda / Vast.ai / AutoDL …), each row with its source URL and fetch date; without local data a bundled, clearly dated snapshot (2026-11-01; AutoDL rows are manual values dated 2026-10-28) is used.
 
 当前版本 / Version: **0.2.0** — 见 / see [CHANGELOG.md](CHANGELOG.md).
 
