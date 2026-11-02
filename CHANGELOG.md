@@ -7,7 +7,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 ## [Unreleased]
 
 ### Changed
-- Bundled GPU snapshot refreshed to the 2026-11-01 price-tracker run (95 rows: RunPod, Lambda,
+- Bundled GPU snapshot refreshed to the 2026-11-02 price-tracker run (96 rows: RunPod, Lambda,
   Vast.ai, AutoDL; USD/CNY 6.670992). AutoDL rows are manual values last checked 2026-10-28 and keep
   that date. Model prices are still fetched live from OpenRouter, so no model snapshot is bundled.
 

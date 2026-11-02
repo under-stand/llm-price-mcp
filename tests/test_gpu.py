@@ -72,7 +72,7 @@ def test_env_csv_missing_file_errors_without_fallback(tmp_path):
 def test_falls_back_to_bundled_snapshot(tmp_path):
     out = gpu.gpu_rental_prices(gpu="H100", env={gpu.ENV_TRACKER_DIR: str(tmp_path / "empty")})
     assert out["source_kind"] == "bundled-snapshot"
-    assert out["snapshot_date"] == out["data_date"] == "2026-11-01"
+    assert out["snapshot_date"] == out["data_date"] == "2026-11-02"
     assert "snapshot" in out["notice"] and out["count"] > 0
     assert all(r["source"].startswith("https://") for r in out["prices"])
 
