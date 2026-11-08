@@ -6,6 +6,13 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+### Added
+- `gpu_rental_prices` now also lists Runcrate (an AI cloud) rows, read live from its public feed
+  `https://www.runcrate.ai/api/gpu-pricing` (no key). Only GPU types the feed names unambiguously are
+  mapped (no H100 or A100, since the feed does not say SXM or PCIe), and out-of-stock types are
+  skipped. The feed is not queried when `LLM_PRICE_GPU_CSV` is set or when the `provider` filter names
+  another provider. A feed failure keeps the CSV rows and adds `live_error` to the output.
+
 ### Changed
 - Bundled GPU snapshot refreshed to the 2026-11-02 price-tracker run (96 rows: RunPod, Lambda,
   Vast.ai, AutoDL; USD/CNY 6.670992). AutoDL rows are manual values last checked 2026-10-28 and keep

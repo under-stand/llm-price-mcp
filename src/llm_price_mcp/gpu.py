@@ -13,6 +13,9 @@ Lookup order for the CSV:
 2. the newest ``<tracker>/data/<YYYY-MM-DD>/gpu_prices.csv`` where ``<tracker>`` is
    ``LLM_PRICE_TRACKER_DIR`` (default ``/workspace/price-tracker``);
 3. the snapshot bundled with this package (``data/gpu_prices_snapshot.csv``).
+
+Runcrate (an AI cloud) rows are not read from the CSV. Unless ``LLM_PRICE_GPU_CSV`` is set, they are
+fetched live from https://www.runcrate.ai/api/gpu-pricing (public JSON, no key) and merged in.
 """
 
 from __future__ import annotations
@@ -25,12 +28,38 @@ from importlib import resources
 from pathlib import Path
 from typing import Any
 
+import httpx
+
 ENV_CSV = "LLM_PRICE_GPU_CSV"
 ENV_TRACKER_DIR = "LLM_PRICE_TRACKER_DIR"
 DEFAULT_TRACKER_DIR = "/workspace/price-tracker"
 SNAPSHOT_NAME = "gpu_prices_snapshot.csv"
 _DATE_DIR = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 PER_MILLION = 1_000_000
+RUNCRATE_FEED_URL = "https://www.runcrate.ai/api/gpu-pricing"
+RUNCRATE_PRICING_URL = "https://www.runcrate.ai/pricing"
+RUNCRATE_PROVIDER = "Runcrate"
+RUNCRATE_TIMEOUT = 10.0
+# Feed ``gpu_type`` -> GPU name used in the CSV. Only types whose name the feed makes unambiguous
+# are mapped: the feed does not say SXM vs PCIe, so H100 and A100 are left out, and V100 comes
+# in two memory sizes.
+RUNCRATE_GPUS = {
+    "B300": "B300",
+    "B200": "B200",
+    "H200": "H200",
+    "H200_nvl": "H200 NVL",
+    "L40S": "L40S",
+    "L40": "L40",
+    "RTX5090": "RTX 5090",
+    "RTX4090": "RTX 4090",
+    "RTX3090": "RTX 3090",
+    "RTX6000Ada": "RTX 6000 Ada",
+    "RTXPro6000": "RTX Pro 6000",
+    "A6000": "RTX A6000",
+    "A40": "A40",
+    "L4": "L4",
+    "A10": "A10",
+}
 
 
 @dataclass
@@ -135,6 +164,42 @@ def load_table(source: GpuSource) -> GpuTable:
     return table
 
 
+def parse_runcrate(payload: Any) -> tuple[list[dict[str, Any]], str]:
+    """Turn the Runcrate feed into table rows plus its ``fetched_at`` timestamp.
+
+    ``min_price_hr`` is the live on-demand price per GPU-hour. Types with no available
+    options are skipped because their price is stale.
+    """
+    gpus = payload.get("gpus") if isinstance(payload, dict) else None
+    if not isinstance(gpus, list):
+        raise ValueError("unexpected Runcrate feed shape")
+    fetched_at = str(payload.get("fetched_at") or "")
+    rows = []
+    for g in gpus:
+        name = RUNCRATE_GPUS.get(g.get("gpu_type"))
+        price = _float(g.get("min_price_hr"))
+        if name is None or price is None or not (_float(g.get("available_options")) or 0) >= 1:
+            continue
+        rows.append({
+            "provider": RUNCRATE_PROVIDER,
+            "gpu": name,
+            "variant": "On-demand",
+            "price_per_hour": price,
+            "currency": "USD",
+            "note": f"live feed {RUNCRATE_FEED_URL}",
+            "source": RUNCRATE_PRICING_URL,
+            "fetch_date": fetched_at[:10],
+            "usd_per_hour": price,
+        })
+    return rows, fetched_at
+
+
+def fetch_runcrate_rows() -> tuple[list[dict[str, Any]], str]:
+    resp = httpx.get(RUNCRATE_FEED_URL, timeout=RUNCRATE_TIMEOUT, headers={"User-Agent": "llm-price-mcp/0.2"})
+    resp.raise_for_status()
+    return parse_runcrate(resp.json())
+
+
 def _norm(s: str) -> str:
     return re.sub(r"[^a-z0-9]", "", s.lower())
 
@@ -154,6 +219,16 @@ def gpu_rental_prices(
     if source.path is None:
         return {"ok": False, "message": source.error, "count": 0, "prices": []}
     table = load_table(source)
+    live_sources: list[dict[str, str]] = []
+    live_error = None
+    if source.kind != "env" and (not provider or provider.strip().lower() in RUNCRATE_PROVIDER.lower()):
+        try:
+            live_rows, fetched_at = fetch_runcrate_rows()
+        except (httpx.HTTPError, ValueError) as e:
+            live_error = f"{RUNCRATE_PROVIDER} live feed unavailable: {e}"
+        else:
+            table.rows.extend(live_rows)
+            live_sources.append({"provider": RUNCRATE_PROVIDER, "url": RUNCRATE_FEED_URL, "fetched_at": fetched_at})
     rows = table.rows
     if provider:
         p = provider.strip().lower()
@@ -172,6 +247,10 @@ def gpu_rental_prices(
         "count": len(rows),
         "prices": rows,
     }
+    if live_sources:
+        out["live_sources"] = live_sources
+    if live_error:
+        out["live_error"] = live_error
     if source.kind == "bundled-snapshot":
         out["snapshot_date"] = data_date
         out["notice"] = (

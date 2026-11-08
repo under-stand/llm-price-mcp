@@ -1,9 +1,13 @@
 import os
 from pathlib import Path
 
+import httpx
 import pytest
+import respx
 
 from llm_price_mcp import gpu
+
+real_fetch_runcrate_rows = gpu.fetch_runcrate_rows
 
 HEADER = "provider,gpu,variant,price_per_hour,currency,note,source,fetch_date\n"
 
@@ -93,3 +97,79 @@ def test_self_host_cost():
     for bad in [(0, 1.0, 1.0), (10, -1, 1.0), (10, 1.0, 0), (10, 1.0, 1.5)]:
         with pytest.raises(ValueError):
             gpu.self_host_cost_per_million(*bad)
+
+
+# Trimmed copy of https://www.runcrate.ai/api/gpu-pricing as fetched on 2026-11-08.
+RUNCRATE_FEED = {
+    "fetched_at": "2026-11-08T06:37:49.328Z",
+    "gpus": [
+        {"gpu_type": "MI350X", "name": "MI350X", "min_price_hr": 5.72, "available_options": 0},
+        {"gpu_type": "H200", "name": "H200", "min_price_hr": 5.13, "available_options": 15},
+        {"gpu_type": "H200_nvl", "name": "H200 NVL", "min_price_hr": 4.67, "available_options": 4},
+        {"gpu_type": "H100", "name": "H100", "min_price_hr": 3.58, "available_options": 15},
+        {"gpu_type": "L40S", "name": "L40S", "min_price_hr": 0.55, "available_options": 9},
+        {"gpu_type": "RTX4090", "name": "RTX 4090", "min_price_hr": 0.58, "available_options": 10},
+        {"gpu_type": "RTXPro6000", "name": "RTX PRO 6000", "min_price_hr": 2.41, "available_options": 22},
+        {"gpu_type": "A6000", "name": "A6000", "min_price_hr": 0.57, "available_options": 47},
+        {"gpu_type": "V100", "name": "V100 16GB", "min_price_hr": 3.35, "available_options": 1},
+    ],
+}
+
+
+def test_parse_runcrate_maps_unambiguous_in_stock_types_only():
+    rows, fetched_at = gpu.parse_runcrate(RUNCRATE_FEED)
+    assert fetched_at == "2026-11-08T06:37:49.328Z"
+    # H100 (SXM vs PCIe unknown), V100 (two sizes) and out-of-stock MI350X are skipped
+    assert [(r["gpu"], r["usd_per_hour"]) for r in rows] == [
+        ("H200", 5.13), ("H200 NVL", 4.67), ("L40S", 0.55),
+        ("RTX 4090", 0.58), ("RTX Pro 6000", 2.41), ("RTX A6000", 0.57)]
+    row = rows[0]
+    assert row["provider"] == "Runcrate" and row["currency"] == "USD" and row["fetch_date"] == "2026-11-08"
+    assert row["source"] == "https://www.runcrate.ai/pricing"
+
+
+def test_parse_runcrate_rejects_unexpected_shape():
+    with pytest.raises(ValueError):
+        gpu.parse_runcrate({"error": "nope"})
+
+
+@pytest.fixture
+def live_feed(monkeypatch):
+    monkeypatch.setattr(gpu, "fetch_runcrate_rows", real_fetch_runcrate_rows)
+
+
+def test_runcrate_rows_are_merged_from_live_feed(tracker, live_feed):
+    with respx.mock() as router:
+        route = router.get(gpu.RUNCRATE_FEED_URL).mock(return_value=httpx.Response(200, json=RUNCRATE_FEED))
+        out = gpu.gpu_rental_prices(gpu="4090", env={gpu.ENV_TRACKER_DIR: str(tracker)})
+    assert route.called
+    assert [(r["provider"], r["usd_per_hour"]) for r in out["prices"]] == [
+        ("AutoDL", pytest.approx(0.3133)), ("Runcrate", 0.58)]
+    assert out["live_sources"] == [{
+        "provider": "Runcrate", "url": gpu.RUNCRATE_FEED_URL, "fetched_at": "2026-11-08T06:37:49.328Z"}]
+    assert out["data_date"] == "2026-10-28" and "live_error" not in out
+
+
+def test_runcrate_provider_filter(tracker, live_feed):
+    with respx.mock() as router:
+        router.get(gpu.RUNCRATE_FEED_URL).mock(return_value=httpx.Response(200, json=RUNCRATE_FEED))
+        out = gpu.gpu_rental_prices(provider="runcrate", env={gpu.ENV_TRACKER_DIR: str(tracker)})
+    assert {r["provider"] for r in out["prices"]} == {"Runcrate"} and out["count"] == 6
+
+
+def test_runcrate_not_fetched_for_other_providers_or_explicit_csv(tracker, tmp_path, live_feed):
+    with respx.mock(assert_all_called=False) as router:
+        route = router.get(gpu.RUNCRATE_FEED_URL).mock(return_value=httpx.Response(200, json=RUNCRATE_FEED))
+        gpu.gpu_rental_prices(provider="lambda", env={gpu.ENV_TRACKER_DIR: str(tracker)})
+        custom = write(tmp_path / "custom.csv", "Acme,L4,x,0.5,USD,n,https://acme,2026-01-02\n")
+        out = gpu.gpu_rental_prices(env={gpu.ENV_CSV: str(custom)})
+    assert not route.called
+    assert [r["provider"] for r in out["prices"]] == ["Acme"] and "live_sources" not in out
+
+
+def test_runcrate_feed_failure_keeps_csv_rows(tracker, live_feed):
+    with respx.mock() as router:
+        router.get(gpu.RUNCRATE_FEED_URL).mock(return_value=httpx.Response(503))
+        out = gpu.gpu_rental_prices(gpu="h100", env={gpu.ENV_TRACKER_DIR: str(tracker)})
+    assert [r["provider"] for r in out["prices"]] == ["Lambda", "RunPod"]
+    assert "Runcrate live feed unavailable" in out["live_error"] and "live_sources" not in out

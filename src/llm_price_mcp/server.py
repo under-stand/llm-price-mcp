@@ -72,10 +72,11 @@ def cheapest(
 
 @mcp.tool()
 def gpu_rental_prices(gpu: str | None = None, provider: str | None = None) -> dict[str, Any]:
-    """GPU rental prices per GPU-hour (RunPod, Lambda, Vast.ai, AutoDL, ...), cheapest first.
+    """GPU rental prices per GPU-hour (RunPod, Lambda, Vast.ai, AutoDL, Runcrate, ...), cheapest first.
 
     Data comes from the newest price-tracker CSV (data/<date>/gpu_prices.csv), or the file in
     the LLM_PRICE_GPU_CSV env var, falling back to a dated snapshot bundled with the package.
+    Runcrate rows are fetched live from its public pricing feed (skipped when LLM_PRICE_GPU_CSV is set).
     Each row carries its source URL and fetch date; CNY prices are also converted to USD.
 
     Args:

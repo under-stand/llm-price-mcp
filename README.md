@@ -33,6 +33,8 @@
 2. `LLM_PRICE_TRACKER_DIR`（默认 `/workspace/price-tracker`）下最新一期 `data/<YYYY-MM-DD>/gpu_prices.csv`；
 3. 包内快照 `src/llm_price_mcp/data/gpu_prices_snapshot.csv`，输出中带 `source_kind: "bundled-snapshot"`、`snapshot_date` 和过期提醒。
 
+另外，[Runcrate](https://www.runcrate.ai/pricing)（一家 AI 云）的行不来自 CSV：除非设置了 `LLM_PRICE_GPU_CSV`，否则每次调用都会从其公开接口 `https://www.runcrate.ai/api/gpu-pricing`（无需 Key）实时读取并合并。只收录接口能明确区分型号的 GPU（接口不区分 SXM/PCIe，因此不含 H100 和 A100），且跳过无库存的型号；接口不可用时仍返回 CSV 数据，并在输出中给出 `live_error`。
+
 CSV 列：`provider,gpu,variant,price_per_hour,currency,note,source,fetch_date`；`provider=FX, gpu=USD/CNY` 一行为汇率。价格为空的行（如 Vast.ai 当期无报价）会被跳过。
 
 #### 自建成本公式
@@ -142,6 +144,8 @@ Models with variable pricing (e.g. the `openrouter/auto` router) are skipped. Fr
 1. `LLM_PRICE_GPU_CSV`: explicit CSV path (a missing file is reported as an error, never silently replaced);
 2. the newest `data/<YYYY-MM-DD>/gpu_prices.csv` under `LLM_PRICE_TRACKER_DIR` (default `/workspace/price-tracker`);
 3. the bundled snapshot `src/llm_price_mcp/data/gpu_prices_snapshot.csv`; the output then carries `source_kind: "bundled-snapshot"`, `snapshot_date` and a staleness notice.
+
+Separately, Runcrate (an AI cloud) rows do not come from the CSV: unless `LLM_PRICE_GPU_CSV` is set, they are fetched live on each call from its public feed `https://www.runcrate.ai/api/gpu-pricing` (no key) and merged in. Only GPUs the feed names unambiguously are listed (the feed does not say SXM vs PCIe, so H100 and A100 are left out) and out-of-stock types are skipped. If the feed is unreachable the CSV data is still returned, with a `live_error` field.
 
 CSV columns: `provider,gpu,variant,price_per_hour,currency,note,source,fetch_date`; the `provider=FX, gpu=USD/CNY` row holds the exchange rate. Rows with an empty price are skipped.
 
